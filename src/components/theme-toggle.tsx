@@ -3,14 +3,12 @@
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
     const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 
     const handleThemeChange = (_e: MediaQueryListEvent) => {
@@ -22,10 +20,6 @@ export function ThemeToggle() {
     return () =>
       mediaQueryList.removeEventListener("change", handleThemeChange);
   }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <Button
@@ -39,8 +33,8 @@ export function ThemeToggle() {
       size="icon"
       variant="flat"
     >
-      {resolvedTheme === "light" && <MoonIcon className="w-4 h-4" />}
-      {resolvedTheme === "dark" && <SunIcon className="w-4 h-4" />}
+      <MoonIcon className="block w-4 h-4 dark:hidden" />
+      <SunIcon className="hidden w-4 h-4 dark:block" />
     </Button>
   );
 }

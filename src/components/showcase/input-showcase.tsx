@@ -11,7 +11,7 @@ export function InputShowcase() {
           <label htmlFor="input" className="text-sm font-medium text-primary">
             Input
           </label>
-          <Input />
+          <Input id="input" />
         </div>
       </ComponentShowcaseCard>
     </div>

@@ -120,20 +120,21 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color">,
+  extends Omit<React.ComponentPropsWithoutRef<typeof Ariakit.Button>, "color">,
     VariantProps<typeof buttonVariants> {}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, color, ...props }, ref) => {
-    return (
-      <Ariakit.Button
-        className={cn(buttonVariants({ variant, size, color, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
+const Button = React.forwardRef<
+  React.ElementRef<typeof Ariakit.Button>,
+  ButtonProps
+>(({ className, variant, size, color, ...props }, ref) => {
+  return (
+    <Ariakit.Button
+      className={cn(buttonVariants({ variant, size, color, className }))}
+      ref={ref}
+      {...props}
+    />
+  );
+});
 
 Button.displayName = "Button";
 
