@@ -30,7 +30,7 @@ export default function RootLayout({
             <div className="flex w-full h-full max-w-5xl">
               <div className="max-w-[160px] w-full p-4 text-sm gap-2 flex-col hidden sm:flex">
                 <span className="font-semibold text-primary">Components</span>
-                <div className="flex flex-col gap-1 pl-1 text-secondary">
+                <div className="flex flex-col gap-1 pl-1 text-zinc-700 dark:text-zinc-400">
                   <Link href="/button" className="hover:underline">
                     Button
                   </Link>
@@ -51,6 +51,9 @@ export default function RootLayout({
                   </Link>
                   <Link href="/dialog" className="hover:underline">
                     Dialog
+                  </Link>
+                  <Link href="/disclosure" className="hover:underline">
+                    Disclosure
                   </Link>
                 </div>
               </div>
