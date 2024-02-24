@@ -12,7 +12,7 @@
     --disabled: 0 0% 75%;
 
     --button-inset-shadow: 0 0% 100%;
-    --button-inset-shadow-opacity: 0.35;
+    --button-inset-shadow-opacity: 0.25;
   }
 
   .dark {
