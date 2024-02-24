@@ -1,17 +1,19 @@
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
+import { DialogNav } from "./dialog-nav";
 
 export function SiteHeader() {
   return (
     <header className="flex items-center justify-between w-full h-20 max-w-5xl px-4 font-semibold tracking-tight text-primary">
-      <div className="flex items-center gap-1">quarkui</div>
+      <div className="items-center hidden gap-1 sm:flex">quarkui</div>
+      <DialogNav />
       <div className="flex items-center gap-2">
         <Button
           variant="ghost"
           size="icon"
           render={<a href="https://twitter.com/hnkhandev" target="_blank" />}
         >
-          <TwitterIcon className="w-4 h-4 stroke-1 text-primary" />
+          <TwitterIcon className="w-4 h-4" />
         </Button>
         <ThemeToggle />
       </div>

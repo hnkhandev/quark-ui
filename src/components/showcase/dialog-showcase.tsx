@@ -34,10 +34,7 @@ export function DialogShowcase() {
             </p>
           </DialogDescription>
           <DialogFooter>
-            <DialogDismiss
-              className="button"
-              render={<Button variant="ghost">Cancel</Button>}
-            />
+            <DialogDismiss render={<Button variant="ghost">Cancel</Button>} />
             <Button>Confirm</Button>
           </DialogFooter>
         </Dialog>
