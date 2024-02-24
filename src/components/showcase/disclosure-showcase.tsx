@@ -18,7 +18,7 @@ export function DisclosureShowcase() {
           <Ariakit.DisclosureProvider>
             <Disclosure>
               Disclose
-              <ChevronDownIcon className="w-4 h-4" />
+              <ChevronDownIcon className="w-4 h-4 group-aria-expanded:rotate-180" />
             </Disclosure>
             <DisclosureContent>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.

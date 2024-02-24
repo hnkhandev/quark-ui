@@ -3,8 +3,8 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
-import Link from "next/link";
 import { Providers } from "@/providers/providers";
+import { LeftSideNav } from "@/components/left-side-nav";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,39 +28,10 @@ export default function RootLayout({
           <SiteHeader />
           <main className="flex justify-center flex-1 w-full">
             <div className="flex w-full h-full max-w-5xl">
-              <div className="max-w-[160px] w-full p-4 text-sm gap-2 flex-col hidden sm:flex">
-                <span className="font-semibold text-primary">Components</span>
-                <div className="flex flex-col gap-1 pl-1 text-zinc-700 dark:text-zinc-400">
-                  <Link href="/button" className="hover:underline">
-                    Button
-                  </Link>
-                  <Link href="/checkbox" className="hover:underline">
-                    Checkbox
-                  </Link>
-                  <Link href="/radio" className="hover:underline">
-                    Radio
-                  </Link>
-                  <Link href="/select" className="hover:underline">
-                    Select
-                  </Link>
-                  <Link href="/badge" className="hover:underline">
-                    Badge
-                  </Link>
-                  <Link href="/input" className="hover:underline">
-                    Input
-                  </Link>
-                  <Link href="/dialog" className="hover:underline">
-                    Dialog
-                  </Link>
-                  <Link href="/disclosure" className="hover:underline">
-                    Disclosure
-                  </Link>
-                </div>
-              </div>
+              <LeftSideNav />
               <section className="flex flex-col items-center flex-1 h-full p-4">
                 {children}
               </section>
-
               <div className="max-w-[160px] w-full hidden lg:block"></div>
             </div>
           </main>
