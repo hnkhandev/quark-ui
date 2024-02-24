@@ -25,7 +25,7 @@ export function DialogNav() {
       <Ariakit.Dialog
         open={open}
         onClose={() => setOpen(false)}
-        className="gap-4 sm:max-w-xs max-w-[14rem] w-full data-[enter]:translate-x-0 duration-300 -translate-x-full opacity-0 transition-all data-[enter]:opacity-100 fixed z-50 inset-y-0 left-0 m-auto flex flex-col border border-zinc-400 dark:bg-zinc-900 dark:border-zinc-800 bg-background p-5 rounded-tr-xl rounded-br-xl h-full shadow-xs"
+        className="gap-4 sm:max-w-xs max-w-[14rem] w-full data-[enter]:translate-x-0 duration-300 -translate-x-full opacity-0 transition-all data-[enter]:opacity-100 fixed z-50 inset-y-0 left-0 m-auto flex flex-col border border-l-0 border-r-zinc-400 border-t-zinc-400 border-b-zinc-400 dark:bg-zinc-900 dark:border-t-zinc-800 dark:border-b-zinc-800 dark:border-r-zinc-800 bg-background p-5 rounded-tr-xl rounded-br-xl h-full shadow-xs"
         backdrop={
           <div className="bg-primary/30 dark:bg-black/70 opacity-0 transition-all data-[enter]:opacity-100" />
         }
