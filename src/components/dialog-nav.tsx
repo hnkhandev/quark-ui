@@ -3,15 +3,10 @@
 import { Cross1Icon, TextAlignJustifyIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import {
-  Dialog,
-  DialogHeading,
-  DialogDescription,
-  DialogDismiss,
-} from "./ui/dialog";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import * as Ariakit from "@ariakit/react";
 
 export function DialogNav() {
   const [open, setOpen] = useState(false);
@@ -27,20 +22,28 @@ export function DialogNav() {
       >
         <TextAlignJustifyIcon className="w-4 h-4" />
       </Button>
-      <Dialog open={open} onClose={() => setOpen(false)} className="gap-4">
-        <DialogHeading className="flex items-center justify-between">
-          Components
-          <DialogDismiss
+      <Ariakit.Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        className="gap-4 sm:max-w-xs max-w-[14rem] w-full data-[enter]:translate-x-0 duration-300 -translate-x-full opacity-0 transition-all data-[enter]:opacity-100 fixed z-50 inset-y-0 left-0 m-auto flex flex-col border border-zinc-400 dark:bg-zinc-900 dark:border-zinc-800 bg-background p-5 rounded-tr-xl rounded-br-xl h-full shadow-xs"
+        backdrop={
+          <div className="bg-primary/30 dark:bg-black/70 opacity-0 transition-all data-[enter]:opacity-100" />
+        }
+      >
+        <Ariakit.DialogHeading className="flex items-center justify-between font-medium">
+          quarkui
+          <Ariakit.DialogDismiss
             render={
               <Button variant="ghost" size="icon">
                 <Cross1Icon />
               </Button>
             }
           />
-        </DialogHeading>
-        <DialogDescription>
-          <div className="flex flex-col gap-1 text-zinc-700 dark:text-zinc-400">
-            <DialogDismiss
+        </Ariakit.DialogHeading>
+        <Ariakit.DialogDescription className="flex flex-col gap-2 text-sm">
+          <span className="font-semibold text-primary">Components</span>
+          <div className="flex flex-col gap-1 pl-1 text-zinc-700 dark:text-zinc-400">
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/button"
@@ -53,7 +56,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/checkbox"
@@ -66,7 +69,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/radio"
@@ -79,7 +82,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/select"
@@ -92,7 +95,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/badge"
@@ -105,7 +108,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/input"
@@ -118,7 +121,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/dialog"
@@ -131,7 +134,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/disclosure"
@@ -144,7 +147,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/card"
@@ -157,7 +160,7 @@ export function DialogNav() {
                 </Link>
               }
             />
-            <DialogDismiss
+            <Ariakit.DialogDismiss
               render={
                 <Link
                   href="/textarea"
@@ -171,8 +174,8 @@ export function DialogNav() {
               }
             />
           </div>
-        </DialogDescription>
-      </Dialog>
+        </Ariakit.DialogDescription>
+      </Ariakit.Dialog>
     </>
   );
 }
