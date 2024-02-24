@@ -8,7 +8,7 @@ export function ButtonShowcase() {
   return (
     <div className="flex flex-col w-full gap-10">
       <ComponentShowcaseCard>
-        <div className="flex items-center justify-center flex-1 w-full gap-2">
+        <div className="flex flex-wrap items-center justify-center flex-1 w-full gap-2">
           <Button>Primary</Button>
           <Button color="destructive">Destructive</Button>
           <Button color="warning">Warning</Button>
@@ -17,7 +17,7 @@ export function ButtonShowcase() {
       </ComponentShowcaseCard>
 
       <ComponentShowcaseCard>
-        <div className="flex items-center justify-center flex-1 w-full gap-2">
+        <div className="flex flex-wrap items-center justify-center flex-1 w-full gap-2">
           <Button variant="flat">Primary</Button>
           <Button variant="flat" color="destructive">
             Destructive
@@ -32,7 +32,7 @@ export function ButtonShowcase() {
       </ComponentShowcaseCard>
 
       <ComponentShowcaseCard>
-        <div className="flex items-center justify-center flex-1 w-full gap-2">
+        <div className="flex flex-wrap items-center justify-center flex-1 w-full gap-2">
           <Button variant="outline">Primary</Button>
           <Button variant="outline" color="destructive">
             Destructive
@@ -47,7 +47,7 @@ export function ButtonShowcase() {
       </ComponentShowcaseCard>
 
       <ComponentShowcaseCard>
-        <div className="flex items-center justify-center flex-1 w-full gap-2">
+        <div className="flex flex-wrap items-center justify-center flex-1 w-full gap-2">
           <Button variant="ghost">Primary</Button>
           <Button variant="ghost" color="destructive">
             Destructive
@@ -62,7 +62,7 @@ export function ButtonShowcase() {
       </ComponentShowcaseCard>
 
       <ComponentShowcaseCard>
-        <div className="flex items-center justify-center flex-1 w-full gap-2">
+        <div className="flex flex-wrap items-center justify-center flex-1 w-full gap-2">
           <Button variant="link">Primary</Button>
           <Button variant="link" color="destructive">
             Destructive
@@ -77,7 +77,7 @@ export function ButtonShowcase() {
       </ComponentShowcaseCard>
 
       <ComponentShowcaseCard>
-        <div className="flex items-center justify-center flex-1 w-full gap-4">
+        <div className="flex flex-wrap items-center justify-center flex-1 w-full gap-4">
           <Button size="icon">
             <PersonIcon />
           </Button>

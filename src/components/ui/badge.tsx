@@ -8,7 +8,7 @@ const Badge = React.forwardRef<
   return (
     <div
       className={cn(
-        "rounded-full text-xs bg-zinc-700 text-white flex items-center justify-center font-medium py-[0.2rem] px-3 after:shadow-top after:absolute dark:after:inset-0 after:inset-[1px] after:rounded-full relative",
+        "whitespace-nowrap rounded-full text-xs bg-zinc-700 text-white flex items-center justify-center font-medium py-[0.2rem] px-3 after:shadow-top after:absolute dark:after:inset-0 after:inset-[1px] after:rounded-full relative",
         className
       )}
       ref={ref}

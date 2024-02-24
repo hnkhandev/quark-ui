@@ -7,7 +7,7 @@ export function BadgeShowcase() {
   return (
     <div className="flex flex-col w-full gap-10">
       <ComponentShowcaseCard>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Badge>Primary</Badge>
           <Badge className="bg-destructive">Destructive</Badge>
           <Badge className="bg-warning">Warning</Badge>
