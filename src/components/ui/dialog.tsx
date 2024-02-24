@@ -41,10 +41,10 @@ const DialogDescription = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof Ariakit.DialogDescription>
 >(({ className, ...props }, ref) => {
   return (
-    <Ariakit.DialogHeading
+    <Ariakit.DialogDescription
       className={cn("text-sm text-zinc-700 dark:text-zinc-400", className)}
       {...props}
-    ></Ariakit.DialogHeading>
+    ></Ariakit.DialogDescription>
   );
 });
 

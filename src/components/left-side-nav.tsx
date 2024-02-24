@@ -84,6 +84,15 @@ export function LeftSideNav() {
         >
           Disclosure
         </Link>
+        <Link
+          href="/card"
+          className={cn(
+            "hover:underline",
+            pathname === "/card" && "font-semibold text-primary"
+          )}
+        >
+          Card
+        </Link>
       </div>
     </div>
   );
