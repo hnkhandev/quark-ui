@@ -110,6 +110,15 @@ export function LeftSideNav() {
         >
           Tab
         </Link>
+        <Link
+          href="/menu"
+          className={cn(
+            "hover:underline",
+            pathname === "/menu" && "font-semibold text-primary"
+          )}
+        >
+          Menu
+        </Link>
       </div>
     </div>
   );
