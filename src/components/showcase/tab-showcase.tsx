@@ -31,7 +31,7 @@ export function TabShowcase() {
               ].map((tab) => (
                 <Ariakit.Tab
                   key={tab.tabId}
-                  className="py-1 px-2 rounded-[0.32rem] mix-blend-exclusion relative hover:bg-zinc-900 aria-selected:hover:bg-transparent whitespace-nowrap"
+                  className="py-1 px-2 rounded-[0.32rem] mix-blend-exclusion relative dark:hover:bg-zinc-900 hover:bg-zinc-950 aria-selected:hover:bg-transparent whitespace-nowrap"
                   onClick={handleTabClick}
                   id={tab.tabId}
                 >
