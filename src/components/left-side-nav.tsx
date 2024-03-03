@@ -101,6 +101,15 @@ export function LeftSideNav() {
         >
           Textarea
         </Link>
+        <Link
+          href="/tab"
+          className={cn(
+            "hover:underline",
+            pathname === "/tab" && "font-semibold text-primary"
+          )}
+        >
+          Tab
+        </Link>
       </div>
     </div>
   );
