@@ -16,7 +16,7 @@ export function TabShowcase() {
         <div className="flex flex-col text-sm font-medium">
           <Ariakit.TabProvider defaultSelectedId={defaultSelectedId}>
             <Ariakit.TabList
-              className="relative flex gap-2 h-9 p-1 rounded-md bg-zinc-200 text-white items-center justify-center dark:bg-zinc-800"
+              className="relative flex gap-2 h-9 p-1 rounded-md bg-zinc-100 text-white items-center justify-center dark:bg-zinc-800"
               aria-label="Groceries"
             >
               <TabAnimator
