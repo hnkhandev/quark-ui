@@ -119,6 +119,15 @@ export function LeftSideNav() {
         >
           Menu
         </Link>
+        <Link
+          href="/switch"
+          className={cn(
+            "hover:underline",
+            pathname === "/switch" && "font-semibold text-primary"
+          )}
+        >
+          Switch
+        </Link>
       </div>
     </div>
   );

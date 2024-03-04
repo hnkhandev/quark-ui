@@ -40,7 +40,10 @@ export function DialogNav() {
             }
           />
         </Ariakit.DialogHeading>
-        <Ariakit.DialogDescription className="flex flex-col gap-2 text-sm">
+        <Ariakit.DialogDescription
+          className="flex flex-col gap-2 text-sm"
+          render={<div />}
+        >
           <span className="font-semibold text-primary">Components</span>
           <div className="flex flex-col gap-1 pl-1 text-zinc-700 dark:text-zinc-400">
             <Ariakit.DialogDismiss
@@ -196,6 +199,19 @@ export function DialogNav() {
                   )}
                 >
                   Menu
+                </Link>
+              }
+            />
+            <Ariakit.DialogDismiss
+              render={
+                <Link
+                  href="/switch"
+                  className={cn(
+                    "hover:underline",
+                    pathname === "/switch" && "font-semibold text-primary"
+                  )}
+                >
+                  Switch
                 </Link>
               }
             />

@@ -9,7 +9,7 @@ export function MenuShowcase() {
       <ComponentShowcaseCard>
         <div className="flex flex-col gap-1">
           <Ariakit.MenuProvider>
-            <Ariakit.MenuButton className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none gap-2 h-8 px-3 rounded-md text-primary hover:bg-zinc-100 dark:hover:bg-zinc-800">
+            <Ariakit.MenuButton className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none gap-2 h-9 px-3 rounded-md text-primary hover:bg-zinc-100 dark:hover:bg-zinc-800">
               Actions
               <Ariakit.MenuButtonArrow />
             </Ariakit.MenuButton>

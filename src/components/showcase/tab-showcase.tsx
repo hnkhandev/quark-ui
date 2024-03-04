@@ -31,7 +31,7 @@ export function TabShowcase() {
               ].map((tab) => (
                 <Ariakit.Tab
                   key={tab.tabId}
-                  className="py-1 px-2 rounded-[0.32rem] mix-blend-exclusion relative dark:hover:bg-zinc-900 hover:bg-zinc-950 aria-selected:hover:bg-transparent whitespace-nowrap"
+                  className="py-1 px-2 rounded-[0.32rem] mix-blend-exclusion relative hover:bg-zinc-950 dark:hover:bg-zinc-900 aria-selected:hover:bg-transparent whitespace-nowrap"
                   onClick={handleTabClick}
                   id={tab.tabId}
                 >
@@ -78,8 +78,12 @@ function useTabAnimator(defaultSelectedId: string) {
 
   function handleTabClick(event: MouseEvent<HTMLButtonElement>) {
     const tabElement = event.currentTarget;
+    const rect = tabElement.getBoundingClientRect();
+    const parentRect = tabElement.offsetParent?.getBoundingClientRect();
+    const accurateOffsetLeft = rect.left - (parentRect?.left || 0);
+
     const props = {
-      left: tabElement.offsetLeft,
+      left: accurateOffsetLeft,
       width: tabElement.getBoundingClientRect().width,
       shouldAnimate: true,
     };
