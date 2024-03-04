@@ -128,6 +128,15 @@ export function LeftSideNav() {
         >
           Switch
         </Link>
+        <Link
+          href="/tooltip"
+          className={cn(
+            "hover:underline",
+            pathname === "/tooltip" && "font-semibold text-primary"
+          )}
+        >
+          Tooltip
+        </Link>
       </div>
     </div>
   );

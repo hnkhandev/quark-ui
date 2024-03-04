@@ -215,6 +215,19 @@ export function DialogNav() {
                 </Link>
               }
             />
+            <Ariakit.DialogDismiss
+              render={
+                <Link
+                  href="/tooltip"
+                  className={cn(
+                    "hover:underline",
+                    pathname === "/tooltip" && "font-semibold text-primary"
+                  )}
+                >
+                  Tooltip
+                </Link>
+              }
+            />
           </div>
         </Ariakit.DialogDescription>
       </Ariakit.Dialog>
