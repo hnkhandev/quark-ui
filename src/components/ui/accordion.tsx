@@ -28,11 +28,15 @@ const Accordion = React.forwardRef<
   >(null);
   const disclosures = React.useRef<Record<string, Ariakit.DisclosureStore>>({});
 
-  const registerItem = React.useCallback((disclosureId: string) => {
-    const store = Ariakit.useDisclosureStore();
-    disclosures.current[disclosureId] = store;
-    return store;
-  }, []);
+  const store = Ariakit.useDisclosureStore();
+
+  const registerItem = React.useCallback(
+    (disclosureId: string) => {
+      disclosures.current[disclosureId] = store;
+      return store;
+    },
+    [store]
+  );
 
   const toggleDisclosure = (disclosureId: string) => {
     if (currentOpenDisclosureId && currentOpenDisclosureId !== disclosureId) {
