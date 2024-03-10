@@ -26,17 +26,17 @@ const Accordion = React.forwardRef<
   const [currentOpenDisclosureId, setCurrentOpenDisclosureId] = React.useState<
     string | null
   >(null);
-  const disclosures: Record<string, Ariakit.DisclosureStore> = {};
+  const disclosures = React.useRef<Record<string, Ariakit.DisclosureStore>>({});
 
-  const registerItem = (disclosureId: string) => {
+  const registerItem = React.useCallback((disclosureId: string) => {
     const store = Ariakit.useDisclosureStore();
-    disclosures[disclosureId] = store;
+    disclosures.current[disclosureId] = store;
     return store;
-  };
+  }, []);
 
   const toggleDisclosure = (disclosureId: string) => {
     if (currentOpenDisclosureId && currentOpenDisclosureId !== disclosureId) {
-      disclosures[currentOpenDisclosureId].hide();
+      disclosures.current[currentOpenDisclosureId].hide();
     }
     setCurrentOpenDisclosureId(disclosureId);
   };
@@ -81,8 +81,6 @@ function AccordionItem({ children, ...props }: AccordionItemProps) {
     </AccordionContext.Provider>
   );
 }
-
-AccordionItem.displayName = "AccordionItem";
 
 export interface AccordionTriggerProps
   extends React.ComponentPropsWithoutRef<typeof Disclosure> {}
