@@ -19,13 +19,7 @@ const AccordionContext = React.createContext<AccordionContextProps | undefined>(
   undefined
 );
 
-const Accordion = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ children, className, ...props }, ref) => {
-  const [currentOpenDisclosureId, setCurrentOpenDisclosureId] = React.useState<
-    string | null
-  >(null);
+function useRegisterItem() {
   const disclosures = React.useRef<Record<string, Ariakit.DisclosureStore>>({});
 
   function registerItem(disclosureId: string) {
@@ -33,6 +27,18 @@ const Accordion = React.forwardRef<
     disclosures.current[disclosureId] = store;
     return store;
   }
+
+  return { disclosures, registerItem };
+}
+
+const Accordion = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ children, className, ...props }, ref) => {
+  const [currentOpenDisclosureId, setCurrentOpenDisclosureId] = React.useState<
+    string | null
+  >(null);
+  const { disclosures, registerItem } = useRegisterItem();
 
   function toggleDisclosure(disclosureId: string) {
     if (currentOpenDisclosureId && currentOpenDisclosureId !== disclosureId) {
