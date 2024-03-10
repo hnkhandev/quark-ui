@@ -10,7 +10,7 @@ import {
 } from "./disclosure";
 
 interface AccordionContextProps {
-  registerItem: (disclosureId: string) => Ariakit.DisclosureStore;
+  registerItem: (disclosureId: string, store: Ariakit.DisclosureStore) => void;
   toggleDisclosure: (disclosureId: string) => void;
   disclosureId: string | null;
 }
@@ -19,18 +19,6 @@ const AccordionContext = React.createContext<AccordionContextProps | undefined>(
   undefined
 );
 
-function useRegisterItem() {
-  const disclosures = React.useRef<Record<string, Ariakit.DisclosureStore>>({});
-
-  function registerItem(disclosureId: string) {
-    const store = Ariakit.useDisclosureStore();
-    disclosures.current[disclosureId] = store;
-    return store;
-  }
-
-  return { disclosures, registerItem };
-}
-
 const Accordion = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -38,7 +26,11 @@ const Accordion = React.forwardRef<
   const [currentOpenDisclosureId, setCurrentOpenDisclosureId] = React.useState<
     string | null
   >(null);
-  const { disclosures, registerItem } = useRegisterItem();
+  const disclosures = React.useRef<Record<string, Ariakit.DisclosureStore>>({});
+
+  function registerItem(disclosureId: string, store: Ariakit.DisclosureStore) {
+    disclosures.current[disclosureId] = store;
+  }
 
   function toggleDisclosure(disclosureId: string) {
     if (currentOpenDisclosureId && currentOpenDisclosureId !== disclosureId) {
@@ -75,7 +67,8 @@ function AccordionItem({ children, ...props }: AccordionItemProps) {
     AccordionContext
   ) as AccordionContextProps;
   const disclosureId = React.useId();
-  const store = registerItem(disclosureId);
+  const store = Ariakit.useDisclosureStore();
+  registerItem(disclosureId, store);
 
   return (
     <AccordionContext.Provider
