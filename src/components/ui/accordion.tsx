@@ -58,6 +58,8 @@ const Accordion = React.forwardRef<
   );
 });
 
+Accordion.displayName = "Accordion";
+
 export interface AccordionItemProps extends Ariakit.DisclosureProviderProps {
   children: React.ReactNode;
 }
@@ -79,6 +81,8 @@ function AccordionItem({ children, ...props }: AccordionItemProps) {
     </AccordionContext.Provider>
   );
 }
+
+AccordionItem.displayName = "AccordionItem";
 
 export interface AccordionTriggerProps
   extends React.ComponentPropsWithoutRef<typeof Disclosure> {}
@@ -104,6 +108,8 @@ const AccordionTrigger = React.forwardRef<
   );
 });
 
+AccordionTrigger.displayName = "AccordionTrigger";
+
 export interface AccordionContentProps
   extends React.ComponentPropsWithoutRef<typeof DisclosureContent> {}
 
@@ -118,21 +124,6 @@ const AccordionContent = React.forwardRef<
   );
 });
 
-export function DisclosureShowcase() {
-  const accordionItems = ["item 1", "item 2", "item 3"];
-
-  return (
-    <Accordion>
-      {accordionItems.map((item) => (
-        <AccordionItem key={item}>
-          <AccordionTrigger>{item}</AccordionTrigger>
-          <AccordionContent
-            animated={true}
-          >{`This is the content for ${item}`}</AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
-  );
-}
+AccordionContent.displayName = "AccordionContent";
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
