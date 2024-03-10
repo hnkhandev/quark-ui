@@ -27,18 +27,24 @@ export interface DisclosureContentProps
 const DisclosureContent = React.forwardRef<
   React.ElementRef<typeof Ariakit.DisclosureContent>,
   DisclosureContentProps
->(({ className, animated, ...props }, ref) => {
+>(({ children, className, animated, ...props }, ref) => {
   const animatedClasses =
     "data-[enter]:opacity-100 opacity-0 transition-all data-[enter]:grid-rows-[1fr] grid-rows-[0fr] !grid duration-300";
   return (
     <Ariakit.DisclosureContent
       className={cn(
-        "data-[open=true]:pt-2 text-sm text-zinc-700 dark:text-zinc-400",
+        "data-[open=true]:pt-0.5 text-sm text-zinc-700 dark:text-zinc-400",
         className,
         animated && animatedClasses
       )}
       {...props}
-    />
+    >
+      {animated ? (
+        <AnimatedDisclosureContent>{children}</AnimatedDisclosureContent>
+      ) : (
+        children
+      )}
+    </Ariakit.DisclosureContent>
   );
 });
 
@@ -73,9 +79,12 @@ const DisclosureContainer = React.forwardRef<
 
 DisclosureContainer.displayName = "DisclosureContainer";
 
+const DisclosureProvider = Ariakit.DisclosureProvider;
+
 export {
   Disclosure,
   DisclosureContent,
   AnimatedDisclosureContent,
   DisclosureContainer,
+  DisclosureProvider,
 };

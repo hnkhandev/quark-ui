@@ -9,6 +9,12 @@ import {
   DisclosureContent,
 } from "../ui/disclosure";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "../ui/accordion";
 
 export function DisclosureShowcase() {
   return (
@@ -90,6 +96,22 @@ export function DisclosureShowcase() {
             </DisclosureContent>
           </Ariakit.DisclosureProvider>
         </DisclosureContainer>
+      </ComponentShowcaseCard>
+
+      <ComponentShowcaseCard>
+        <Accordion className="max-w-[300px] w-full">
+          {["Item 1", "Item 2", "Item 3"].map((item) => (
+            <AccordionItem key={item}>
+              <AccordionTrigger>
+                {item}
+                <ChevronDownIcon className="w-4 h-4 transition-all duration-300 group-aria-expanded:rotate-180" />
+              </AccordionTrigger>
+              <AccordionContent
+                animated
+              >{`This is the content for ${item}`}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </ComponentShowcaseCard>
     </div>
   );

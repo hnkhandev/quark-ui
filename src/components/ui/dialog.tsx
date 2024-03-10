@@ -65,9 +65,9 @@ const DialogFooter = React.forwardRef<HTMLDivElement, DialogFooterProps>(
   }
 );
 
-const DialogDismiss = Ariakit.DialogDismiss;
-
 DialogFooter.displayName = "DialogFooter";
+
+const DialogDismiss = Ariakit.DialogDismiss;
 
 export {
   Dialog,

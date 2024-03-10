@@ -16,9 +16,7 @@ export function TooltipShowcase() {
               unmountOnHide
               className="bg-black text-white py-1 px-2 text-xs rounded-lg data-[enter]:opacity-100 data-[enter]:translate-y-0 translate-y-2  origin-top opacity-0 transition-all dark:bg-zinc-900 dark:border-zinc-800 dark:border"
             >
-              <a href="https://ariakit.org/components/tooltip" target="_blank">
-                https://ariakit.org/components/tooltip
-              </a>
+              This is a tooltip
             </Ariakit.Tooltip>
           </Ariakit.TooltipProvider>
         </div>
